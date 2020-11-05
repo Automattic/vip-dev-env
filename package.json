@@ -1,0 +1,9 @@
+{
+  "name": "vipdev-cli",
+  "description": "Tool to manage VIP development sites",
+  "version": "0.0.1",
+  "dependencies": {
+    "commander": "^6.1.0",
+    "ejs": "^3.1.5"
+  }
+}
