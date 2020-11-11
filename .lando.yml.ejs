@@ -12,7 +12,7 @@ services:
   devtools:
     type: compose
     services:
-      image: wpvipdev/dev-tools:0.2
+      image: wpvipdev/dev-tools:0.3
       command: sleep infinity
       volumes:
         - devtools:/dev-tools
@@ -79,7 +79,7 @@ services:
     type: compose
     services:
       image: <%= wordpress.image %>:<%= wordpress.tag %>
-      command: sh /run.sh
+      command: sh -c "rsync -a /wp/ /shared/; sleep infinity"
       volumes:
         - wordpress:/shared
     volumes:
