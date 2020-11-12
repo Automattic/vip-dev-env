@@ -91,7 +91,7 @@ services:
     type: compose
     services: 
       image: <%= muplugins.image %>:<%= muplugins.tag %>
-      command: sh -c 'rsync -a /mu-plugins/ /shared/; sh /mu-plugins/bin/autoupdate.sh /shared'
+      command: sh -c 'rsync -a /mu-plugins/ /shared/; sh /autoupdate.sh /shared'
       volumes:
         - mu-plugins:/shared
     volumes:
