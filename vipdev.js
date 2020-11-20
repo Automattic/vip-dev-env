@@ -241,7 +241,21 @@ function updateClientCodeData( instanceData, codeParam ) {
 async function prepareLandoEnv( instanceData, instancePath ) {
 	if ( instanceData.clientcode.mode == 'git' && ! instanceData.clientcode.fetched ) {
 		const clonePath = instancePath + '/clientcode';
-		fs.rmdirSync(clonePath, { recursive: true });
+
+		try {
+			fs.rmdirSync(clonePath, { recursive: true })
+		} catch (err) {
+			const {
+				code = ''
+			} = err;
+
+			// rmdir throws an error if the directory does not exist.
+			// it's not worth wasting a call to fileExists beforehand since the goal is to delete the directory.
+			if ( -1 === ['ENOENT', 'ENOTDIR'].indexOf(code) ) {
+				// something else happened, throw the error.
+				throw err;
+			}
+		}
 
 		console.log( 'Cloning client code repo: ' + instanceData.clientcode.repo );
 
