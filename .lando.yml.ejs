@@ -63,7 +63,7 @@ services:
 
   vip-search:
     type: elasticsearch:custom
-    portforward: 9200
+    portforward: true
     overrides:
       image: bitnami/elasticsearch:7.8.0
 
