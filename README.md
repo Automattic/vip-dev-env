@@ -50,6 +50,31 @@ After an instance has been created, you can upgrade some of its components. E.g:
 This will rebuild the app containers but without losing any data.
 
 
+## Common use cases
+
+NOTE: Default `wp-admin` credentials are `vipgo:password`
+
+### MU-plugins DEV
+
+When you want to have basic site that is using your local mu-plugins code checkout similar to what previous `vip-go-mu-dev` environment used to do:
+
+```
+./vipdev.js create <env-name> --mu-plugins <mu-plugins-absolute-path>
+```
+
+### MU-plugins DEV multisite (-m)
+
+```
+./vipdev.js create <env-name> -m --mu-plugins <mu-plugins-absolute-path>
+```
+
+To add sites:
+
+```
+cd dev-<env-name>
+lando add-site --slug=test --title="Test"
+```
+
 ### To-Do
 
 There are a few things that are needed before matching the functionalities of the current lando environment in `mu-dev`:
