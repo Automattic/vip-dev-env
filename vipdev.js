@@ -10,7 +10,7 @@ const defaultPHP = '7.3';
 const containerImages = {
 	'wordpress': {
 		image: 'wpvipdev/wordpress',
-		tag: '5.5.2',
+		tag: '5.6',
 	},
 	'jetpack': {
 		image: 'wpvipdev/jetpack',
