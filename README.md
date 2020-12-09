@@ -86,4 +86,13 @@ There are a few things that are needed before matching the functionalities of th
 
 ### Container definitions
 
-In the directory `docker` you can find the Dockerfiles for all containers used in this environment. They are pushed to the organization `wpvipdev` in dockerhub (all of them are based on open source projects, so they can be public)
+In the directory `docker` you can find the Dockerfiles for all containers used in this environment. They are pushed to the organization `wpvipdev` in dockerhub (all of them are based on open source projects, so they can be public).
+
+If you need to change anything on the docker images:
+1. Adapt the `Dockerfile` and/or the scripts or config files
+1. Bump the tag version in the corresponding `build.sh` script
+1. Run `sh build.sh`, it will build the new docker image locally
+1. Bump the required version in `.lando.yml.ejs` (but don't commit yet)
+1. Test it in your local dev environment
+1. Once you are happy with it, you can push the image to dockerhub using the script `tools/push-public.sh` in the [vip-docker repo](https://github.com/Automattic/vip-docker/), so it can be made available to any other user
+1. Commit/Push/PR your changes to `.lando.yml.ejs` so the new docker images requirements are distributed
