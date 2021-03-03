@@ -111,9 +111,11 @@ function setOptionsForSiteId( options, siteId ) {
 
 	options.title = siteInfo.data[0].name + ' (' + siteId + ')';
 
-	const repo = siteInfo.data[0].source_repo;
-	const branch = siteInfo.data[0].source_repo_branch;
-	options.clientCode = 'git@github.com:' + repo + '#' + branch
+	if ( ! options.clientCode ) {
+		const repo = siteInfo.data[0].source_repo;
+		const branch = siteInfo.data[0].source_repo_branch;
+		options.clientCode = 'git@github.com:' + repo + '#' + branch
+	}
 
 	options.multisite = siteInfo.data[0].is_multisite;
 
