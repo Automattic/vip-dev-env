@@ -1,5 +1,13 @@
 ## Dev environment with containers
 
+> ==============================
+>
+> THIS REPO IS BEING DEPRECATED.
+>
+> Please use https://docs.wpvip.com/technical-references/vip-local-development-environment/ instead.
+>
+> ==============================
+
 This is a PoC of a new model for the dev environment based almost completely on containers.
 
 It also integrates the ideas of multi-instance support from https://github.com/Automattic/vip-go-mu-dev/pull/32
