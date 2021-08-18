@@ -4,7 +4,7 @@
 >
 > THIS REPO IS BEING DEPRECATED.
 >
-> Please go to https://github.com/Automattic/vip-container-images
+> Please use https://docs.wpvip.com/technical-references/vip-local-development-environment/ instead.
 >
 > ==============================
 
